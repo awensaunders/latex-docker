@@ -5,7 +5,7 @@ RUN apt install -y fontconfig wget rsync
 FROM base as builder
 RUN mkdir /tmp/texmirror
 WORKDIR /tmp/texmirror
-RUN rsync --bwlimit=20000 -avz --progress --delete rsync://mirror.ctan.org/CTAN/systems/texlive/tlnet ./
+RUN rsync -avz --progress --delete rsync://mirror.ctan.org/CTAN/systems/texlive/tlnet ./
 
 RUN mkdir /tmp/texlive
 WORKDIR /tmp/texlive
