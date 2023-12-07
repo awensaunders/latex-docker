@@ -8,7 +8,7 @@ RUN mkdir /tmp/texlive
 WORKDIR /tmp/texlive
 RUN wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 RUN tar -xzf install-tl-unx.tar.gz
-RUN cd install-tl-2* && perl ./install-tl --no-interaction 
+RUN cd install-tl-2* && perl ./install-tl --no-interaction --scheme=small
 
 FROM base as final
 COPY --from=builder /usr/local/texlive /usr/local/texlive
