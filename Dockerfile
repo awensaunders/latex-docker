@@ -10,7 +10,7 @@ RUN wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 RUN tar -xzf install-tl-unx.tar.gz
 RUN cd install-tl-2* && perl ./install-tl --no-interaction --scheme=small
 # Additional packages beyond the scheme we just installed
-RUN /usr/local/texlive/$(date -I | cut -c 1-4)/bin/$(uname -m)-linux/tlmgr install latexmk subfiles placeins
+RUN /usr/local/texlive/2023/bin/$(uname -m)-linux/tlmgr install latexmk subfiles placeins
 
 
 FROM base as final
