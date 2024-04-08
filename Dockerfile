@@ -1,10 +1,11 @@
 # Build args are scoped weridly in docker, so it needs to be redeclared after
-# each FROM. We need to set this manually because the 2024 release isn't out yet
-ARG TL_YEAR=2023
+# each FROM. We need to set this manually because the releases don't come out
+# immediately at the beginning of the year
+ARG TL_YEAR=2024
 
 FROM mcr.microsoft.com/devcontainers/base:bookworm as base
 RUN apt-get update && apt-get install -y
-RUN apt install -y fontconfig wget
+RUN apt-get install -y fontconfig wget
 
 FROM base as builder
 ARG TL_YEAR
